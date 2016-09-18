@@ -14,6 +14,8 @@ import android.widget.TextView;
  */
 public class ListFragment extends Fragment {
 
+    boolean x = true;
+
     public ListFragment() {
     }
 
@@ -29,6 +31,20 @@ public class ListFragment extends Fragment {
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//code here
+        final Button button;
+        button = (Button) getView().findViewById(R.id.Click);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View Click) {
+                    if (x) {
+                        final TextView textViewToChange = (TextView) getView().findViewById(R.id.Names);
+                        textViewToChange.setText("Inbal");
+                    }
+                    else{
+                        final TextView textViewToChange = (TextView) getView().findViewById(R.id.Names);
+                        textViewToChange.setText("Inessa");
+                    }
+                    x = !x;
+                }
+        });
     }
 }
