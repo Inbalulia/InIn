@@ -14,10 +14,7 @@ import android.widget.TextView;
  */
 public class ListFragment extends Fragment {
 
-    boolean x = true;
-
-    public ListFragment() {
-    }
+//    boolean state = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,21 +27,31 @@ public class ListFragment extends Fragment {
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         final Button button;
-        button = (Button) getView().findViewById(R.id.Click);
+
+        final TextView textViewToChange = (TextView) view.findViewById(R.id.Names);
+        button = (Button) view.findViewById(R.id.Click);
+
         button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View Click) {
-                    if (x) {
-                        final TextView textViewToChange = (TextView) getView().findViewById(R.id.Names);
-                        textViewToChange.setText("Inbal");
-                    }
-                    else{
-                        final TextView textViewToChange = (TextView) getView().findViewById(R.id.Names);
-                        textViewToChange.setText("Inessa");
-                    }
-                    x = !x;
-                }
-        });
+                                      public void onClick(View Click) {
+
+//                                           if (state) {
+//                                                   textViewToChange.setText("Inbal");
+//                                               }
+//                                               else{
+//                                                   textViewToChange.setText("Inessa");
+//                                               }
+//                                               state = !state;
+//                                           }
+
+                                          if (textViewToChange.getText() == "Inbal") {
+                                              textViewToChange.setText("Inessa");
+                                          } else {
+                                              textViewToChange.setText("Inbal");
+                                          }
+                                      }
+                                  }
+        );
     }
 }
+

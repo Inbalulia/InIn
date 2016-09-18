@@ -13,15 +13,10 @@
             android:id="@+id/Names"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-   <!-- <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Click me"
-            android:onClick="selfDestruct"
-            android:id="presMe"
-    /> !-->
+
     <Button xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/Click"
+            android:layout_marginTop="100dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Click me"
